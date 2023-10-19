@@ -1,10 +1,11 @@
 
-CREATE TABLE ingredient (
-    ingredient_id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(255) NOT NULL,
-    contains_lactose BOOLEAN NOT NULL,
-    vegetarian BOOLEAN NOT NULL,
-    vegan BOOLEAN NOT NULL,
-    gluten_free BOOLEAN NOT NULL,
-    CONSTRAINTS unique_name UNIQUE (name)
-    );
+ALTER TABLE Ingredient
+MODIFY name VARCHAR(255) NOT NULL,
+MODIFY vegetarian BOOLEAN NOT NULL,
+MODIFY vegan BOOLEAN NOT NULL,
+MODIFY gluten_free BOOLEAN NOT NULL,
+MODIFY contains_lactose BOOLEAN NOT NULL;
+
+ALTER TABLE Ingredient
+ADD CONSTRAINTS unique_name UNIQUE (name);
+
